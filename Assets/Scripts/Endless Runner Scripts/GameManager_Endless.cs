@@ -8,6 +8,7 @@ public class GameManager_Endless : MonoBehaviour
     [SerializeField] private float _speedIncrease = 2f; // Added speed value for difficulty scaling
     [SerializeField] private float _speedIncreaseInterval = 5f; // First increased speed happens after 5 seconds
     [SerializeField] private float _gameDuration = 30f; // Game duration
+    [SerializeField] private ChapterMenu chapterMenu; // Assign manually in Unity Inspector
 
     [SerializeField] Button _pauseBtn;
     [SerializeField] Scrollbar _progressBarScrollBar;
@@ -18,7 +19,7 @@ public class GameManager_Endless : MonoBehaviour
     private float _runtimeSpeed;
     private float _elapsedTime = 0f;
 
-    private CompletedChapter _completedChapter;
+    private CompletedChapter _completedChapter; // Reference to the separate CompletedChapter script
     private UIManager_Endless _UI;
 
     private ParallaxBG[] _BGs;
@@ -146,11 +147,10 @@ public class GameManager_Endless : MonoBehaviour
         if (_gameWon)
         {
             Debug.LogWarning("Game already won, skipping endGame logic...");
-            return; // Prevents multiple calls
+            return;
         }
 
         _gameWon = true;
-
         Time.timeScale = 0f;
         hideUI();
 
@@ -162,15 +162,37 @@ public class GameManager_Endless : MonoBehaviour
 
         if (isFail == 0)
         {
-            Debug.Log("Game won, unlocking new chapter verse...");
+            Debug.Log("Victory condition reached, unlocking new chapter verse...");
+
             if (_completedChapter != null)
             {
-                _completedChapter.UnlockNewChapterVerse();
+                _completedChapter.UnlockNewChapterVerse(2); // Hardcoded to unlock Chapter 2
+
+                ChapterMenu chapterMenu = FindObjectOfType<ChapterMenu>();
+                Debug.Log($"ChapterMenu found: {chapterMenu != null}");
+
+                if (chapterMenu != null)
+                {
+                    chapterMenu.UpdateButtons();
+                    Debug.Log("ChapterMenu updated.");
+                }
+                else
+                {
+                    Debug.LogError("ChapterMenu not found!");
+                }
             }
+            else
+            {
+                Debug.LogError("CompletedChapter script reference is missing!");
+            }
+
             _UI.showGameWonScreen();
         }
+
         Debug.Log("EndGame Called with isFail = " + isFail);
     }
+
+
 
     public void StartGame()
     {
@@ -221,30 +243,5 @@ public class GameManager_Endless : MonoBehaviour
         }
 
         Debug.Log("Game state reset!");
-    }
-}
-
-public class CompletedChapter : MonoBehaviour
-{
-    public void UnlockNewChapterVerse()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int reachedIndex = PlayerPrefs.GetInt("ReachedIndex", 0);
-
-        // Log unlock progress
-        Debug.Log($"Current Scene Index: {currentSceneIndex}, Reached Index: {reachedIndex}");
-
-        if (currentSceneIndex > reachedIndex)
-        {
-            PlayerPrefs.SetInt("ReachedIndex", currentSceneIndex);
-            PlayerPrefs.SetInt("UnlockedChapter", PlayerPrefs.GetInt("UnlockedChapter", 1) + 1);
-            PlayerPrefs.Save();
-
-            Debug.Log($"New Reached Index: {PlayerPrefs.GetInt("ReachedIndex")}, Unlocked Chapter: {PlayerPrefs.GetInt("UnlockedChapter")}");
-        }
-        else
-        {
-            Debug.LogWarning("UnlockNewChapterVerse called but no new chapter unlocked!");
-        }
     }
 }
