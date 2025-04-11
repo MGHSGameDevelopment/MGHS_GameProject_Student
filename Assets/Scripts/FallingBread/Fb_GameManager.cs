@@ -16,12 +16,14 @@ public class Fb_GameManager : MonoBehaviour
     public TMP_Text TimerFont;
     public float TimeValue = 91;
 
-
     [SerializeField] private Button PauseButton;
     [SerializeField] private GameObject PauseScreen;
     [SerializeField] private GameObject StartHelpMenu;
 
     public bool isReady; //if true make player move
+
+    private CompletedChapter3 _completedChapter; // Reference to the Chapter 3 script
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,18 @@ public class Fb_GameManager : MonoBehaviour
         TimerFont.text = TimeValue.ToString();
         StartHelpMenu.SetActive(true);
         Time.timeScale = 0;
+
+        // Initialize CompletedChapter_Chapter3 reference
+        _completedChapter = FindObjectOfType<CompletedChapter3>();
+
+        if (_completedChapter == null)
+        {
+            Debug.LogError("CompletedChapter3 script is missing in the scene!");
+        }
+        else
+        {
+            Debug.Log("CompletedChapter3 initialized successfully.");
+        }
     }
 
     // Update is called once per frame
@@ -68,6 +82,17 @@ public class Fb_GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             WinScreen.SetActive(true);
+
+            // Unlock Chapter 3 Verse
+            if (_completedChapter != null)
+            {
+                _completedChapter.UnlockNewChapterVerse(3); // Unlock Chapter 3
+                Debug.Log("Chapter 3 verse unlocked.");
+            }
+            else
+            {
+                Debug.LogError("Failed to unlock Chapter 3. CompletedChapter_Chapter3 script is null.");
+            }
         }
     }
 
@@ -88,8 +113,7 @@ public class Fb_GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-
-// From Matching Game Codes to this file
+    // From Matching Game Codes to this file
     public void RetryGameLevel()
     {
         Time.timeScale = 1;
