@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager_Endless : MonoBehaviour
-{
+{   
+    public Leaderboard leaderboardReference;
     [SerializeField] private float _defaultSpeed = 5f; // Default speed for obstacles
     [SerializeField] private float _speedIncrease = 2f; // Added speed value for difficulty scaling
     [SerializeField] private float _speedIncreaseInterval = 5f; // First increased speed happens after 5 seconds
@@ -145,7 +146,7 @@ public class GameManager_Endless : MonoBehaviour
     public void endGame(int isFail)
     {
         if (_gameWon)
-        {
+        {   
             Debug.LogWarning("Game already won, skipping endGame logic...");
             return;
         }
@@ -163,7 +164,7 @@ public class GameManager_Endless : MonoBehaviour
         if (isFail == 0)
         {
             Debug.Log("Victory condition reached, unlocking new chapter verse...");
-
+            Leaderboard.Instance.tallyScores(30);
             if (_completedChapter != null)
             {
                 _completedChapter.UnlockNewChapterVerse(2); // Hardcoded to unlock Chapter 2

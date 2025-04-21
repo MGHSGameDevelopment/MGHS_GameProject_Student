@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
 public class MG_CardManager : MonoBehaviour
-{
+{   
+    public Leaderboard leaderboardReference;
     [SerializeField] TMP_Text PointsText;
     [SerializeField] TMP_Text TimeLeft;
-
+    
     [SerializeField] GameObject WinScreen;
     [SerializeField] GameObject LoseScreen;
 
@@ -39,6 +40,14 @@ public class MG_CardManager : MonoBehaviour
         CreateCards();
         TimeLeft.text = _time.ToString();
         PointsText.text = Points.ToString();
+        if (leaderboardReference == null)
+        {
+            leaderboardReference = FindObjectOfType<Leaderboard>(); // Auto-find Leaderboard
+            if (leaderboardReference == null)
+            {
+                Debug.LogError("Leaderboard not found in scene!");
+            }
+        }
     }
 
     void Update()
@@ -87,12 +96,13 @@ public class MG_CardManager : MonoBehaviour
             Points++;
             PointsText.text = Points.ToString();
             if (Points == 5)
-            {
+            {   
                 AudioManager.instance.PlaySfx("GameWon");
                 WinScreen.SetActive(true);
                 PauseButtonUI.enabled = false;
                 Time.timeScale = 0;
                 Debug.Log("Success!");
+                Leaderboard.Instance.tallyScores(5);
             }
         }
         else
@@ -179,6 +189,6 @@ public class MG_CardManager : MonoBehaviour
     public void GotoEpilogueScene()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Eplg_MatchingGame");
+        SceneManager.LoadScene("Eplg_MatchingGame", LoadSceneMode.Additive);
     }
 }

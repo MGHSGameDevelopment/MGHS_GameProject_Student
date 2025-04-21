@@ -3227,6 +3227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2085c7007b605dd4ea037207a6b91100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderboardReference: {fileID: 0}
   PointsText: {fileID: 1397055817}
   TimeLeft: {fileID: 3565818}
   WinScreen: {fileID: 1049171380}

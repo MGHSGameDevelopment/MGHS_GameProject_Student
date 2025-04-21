@@ -123,22 +123,22 @@ public class CutsceneManager : MonoBehaviour
     
     public void GotoMatchingGame()
     {
-        SceneManager.LoadScene("MatchingGame");
+        SceneManager.LoadScene("MatchingGame", LoadSceneMode.Additive);
     }
 
     public void GotoEndlessRunner()
     {
-        SceneManager.LoadScene("EndlessRunner");
+        SceneManager.LoadScene("EndlessRunner", LoadSceneMode.Additive);
     }
 
     public void GotoFallingItem()
     {
-        SceneManager.LoadScene("FallingItem");
+        SceneManager.LoadScene("FallingItem", LoadSceneMode.Additive);
     }
 
 
     public void Goto_GameMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
     }
 }

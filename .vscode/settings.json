@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "MGHS_GameProject.sln"
+    "dotnet.defaultSolution": "MGHS_GameProject_Student.sln"
 }

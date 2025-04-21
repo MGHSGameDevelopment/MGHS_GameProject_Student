@@ -7,7 +7,8 @@ using UnityEngine.UI;
 using System;
 
 public class Fb_GameManager : MonoBehaviour
-{
+{   
+    public Leaderboard leaderboardReference;
     [SerializeField] private GameObject WinScreen;
     [SerializeField] private GameObject LoseScreen;
 
@@ -79,7 +80,8 @@ public class Fb_GameManager : MonoBehaviour
         points++;
         pointsText.text = points.ToString();
         if (points == 30)
-        {
+        {   
+            Leaderboard.Instance.tallyScores(Mathf.RoundToInt(points));
             Time.timeScale = 0;
             WinScreen.SetActive(true);
 
@@ -144,6 +146,6 @@ public class Fb_GameManager : MonoBehaviour
     public void GoToEpilogue_FallingItemScene()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Eplg_FallingItem");
+        SceneManager.LoadScene("Eplg_FallingItem", LoadSceneMode.Additive);
     }
 }

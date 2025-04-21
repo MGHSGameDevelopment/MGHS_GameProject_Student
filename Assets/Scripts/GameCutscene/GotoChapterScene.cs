@@ -55,7 +55,7 @@ public class GotoChapterScene : MonoBehaviour
         if (Chapter1Enabled)
         {
 
-            SceneManager.LoadScene("Prlg_MatchingGame");
+            SceneManager.LoadScene("Prlg_MatchingGame", LoadSceneMode.Additive);
             Debug.Log("Loading Chapter 1");
         }
     }
@@ -64,7 +64,7 @@ public class GotoChapterScene : MonoBehaviour
     {
         if (Chapter2Enabled)
         {
-            SceneManager.LoadScene("Prlg_EndlessRunner");
+            SceneManager.LoadScene("Prlg_EndlessRunner", LoadSceneMode.Additive);
             Debug.Log("Loading Chapter 2");
         }
     }
@@ -73,7 +73,7 @@ public class GotoChapterScene : MonoBehaviour
     {
         if (Chapter3Enabled)
         {
-            SceneManager.LoadScene("Prlg_FallingItem");
+            SceneManager.LoadScene("Prlg_FallingItem", LoadSceneMode.Additive);
             Debug.Log("Loading Chapter 3");
         }
     }
