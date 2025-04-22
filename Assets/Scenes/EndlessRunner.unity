@@ -3364,13 +3364,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87d55d78d398b74eb4add5bfdab43ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderboardReference: {fileID: 0}
   _defaultSpeed: 5
   _speedIncrease: 0.75
   _speedIncreaseInterval: 8
   _gameDuration: 91
+  chapterMenu: {fileID: 0}
   _pauseBtn: {fileID: 286587222}
   _progressBarScrollBar: {fileID: 544606634}
-  _tutorialPanel: {fileID: 0}
 --- !u!114 &931304140
 MonoBehaviour:
   m_ObjectHideFlags: 0

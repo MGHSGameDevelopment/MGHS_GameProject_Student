@@ -4,33 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    private bool hasReachedGoal = false;
+    public float Speed;
+    private float Move;
+
+    public float jump;
+    public bool isJumping;
+
+    private Rigidbody2D player;
+
+    // Define the goal position (adjust as needed)
+    public float goalX = 10f;
+
+    void Start()
+    {
+        player = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        HandleMovement();
-    }
+        Move = Input.GetAxis("Horizontal");
+        player.velocity = new Vector2(Speed * Move, player.velocity.y);
 
-    void HandleMovement()
-    {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-
-        transform.Translate(new Vector3(moveX, moveY, 0) * moveSpeed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Goal"))
+        // Move jump input check inside Update()
+        if (Input.GetButtonDown("Jump"))
         {
-            hasReachedGoal = true;
-            Debug.Log("Goal Reached!");
+            player.AddForce(new Vector2(player.velocity.x, jump), ForceMode2D.Impulse);
+            Debug.Log("jump");
         }
     }
-
+    // Method to check if player has reached the goal
     public bool HasReachedGoal()
     {
-        return hasReachedGoal;
+        return transform.position.x >= goalX;
     }
 }
