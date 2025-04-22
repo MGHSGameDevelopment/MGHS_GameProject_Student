@@ -136,7 +136,10 @@ public class CutsceneManager : MonoBehaviour
         SceneManager.LoadScene("FallingItem", LoadSceneMode.Additive);
     }
 
-
+    public void GoToPlatformer()
+    {
+        SceneManager.LoadScene("PlatformerGame", LoadSceneMode.Additive);
+    }
     public void Goto_GameMenu()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);

@@ -11,6 +11,8 @@ public class GotoChapterScene : MonoBehaviour
     [SerializeField] private GameObject Chapter2UI;
     public bool Chapter3Enabled;
     [SerializeField] private GameObject Chapter3UI;
+    [SerializeField] private GameObject Chapter4UI;
+    public bool Chapter4Enabled;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,10 @@ public class GotoChapterScene : MonoBehaviour
         }
         else
             Chapter3Enabled = false;
+        if (Chapter4UI.activeSelf)
+        {
+            Chapter4Enabled = true;
+        }
     }
 
     public void LoadActiveChapter()
@@ -48,6 +54,7 @@ public class GotoChapterScene : MonoBehaviour
         LoadChapter1();
         LoadChapter2();
         LoadChapter3();
+        LoadChapter4();
     }
 
     void LoadChapter1()
@@ -75,6 +82,15 @@ public class GotoChapterScene : MonoBehaviour
         {
             SceneManager.LoadScene("Prlg_FallingItem", LoadSceneMode.Additive);
             Debug.Log("Loading Chapter 3");
+        }
+    }
+
+    void LoadChapter4()
+    {
+        if (Chapter4Enabled)
+        {
+            SceneManager.LoadScene("Prlg_PlatformerGame", LoadSceneMode.Additive);
+            Debug.Log("Loading Chapter 4");
         }
     }
 }
