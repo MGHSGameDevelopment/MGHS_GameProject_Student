@@ -20,6 +20,7 @@ public class RandomQuestionDisplay : MonoBehaviour
     private Question[] currentQuestions;
     private List<int> unusedIndices = new List<int>();
     private int currentQuestionIndex = -1;
+    public int finalScore;
     private int score = 0;
     private int totalQuestions = 0;
     private int questionsAnswered = 0;
@@ -74,8 +75,11 @@ public class RandomQuestionDisplay : MonoBehaviour
             }
 
             if (summaryScoreText != null)
+            {
                 summaryScoreText.text = "Final Score: " + score + "/" + totalQuestions;
-
+                finalScore = score;
+                Debug.Log("The Final Score is:" + finalScore);
+            }
             if (summaryPanel != null)
                 summaryPanel.SetActive(true);
 
