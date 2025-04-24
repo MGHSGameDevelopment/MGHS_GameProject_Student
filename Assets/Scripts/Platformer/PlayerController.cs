@@ -4,37 +4,68 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed;
-    private float Move;
-
-    public float jump;
-    public bool isJumping;
-
+    public float Speed; private float Move;
+    public float jump; // Force applied to jump
     private Rigidbody2D player;
 
-    // Define the goal position (adjust as needed)
-    public float goalX = 10f;
+    public int maxJumps = 15; // Maximum number of jumps allowed
+    private int remainingJumps; // Tracks jumps left
 
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+
+        if (player == null)
+        {
+            Debug.LogError("Rigidbody2D component is missing on the player!");
+        }
+
+        remainingJumps = maxJumps; // Initialize remaining jumps
     }
 
     void Update()
     {
+        // Check if player is on the ground by velocity
+        bool canJump = Mathf.Abs(player.velocity.y) < 1.0f;
+
+        // Handle horizontal movement
         Move = Input.GetAxis("Horizontal");
         player.velocity = new Vector2(Speed * Move, player.velocity.y);
 
-        // Move jump input check inside Update()
-        if (Input.GetButtonDown("Jump"))
+        // Handle jump input (allow jump only if not in the air)
+        if (Input.GetButtonDown("Jump") && canJump)
         {
-            player.AddForce(new Vector2(player.velocity.x, jump), ForceMode2D.Impulse);
-            Debug.Log("jump");
+            Jump();
         }
     }
-    // Method to check if player has reached the goal
-    public bool HasReachedGoal()
+
+    void FixedUpdate()
     {
-        return transform.position.x >= goalX;
+        if (player.velocity.y < 0) // Check if player is falling
+        {
+            player.AddForce(Vector2.down * 5.0f); // Apply additional downward force
+        }
+    }
+
+    void Jump()
+    {
+        // Apply jump force
+        player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
+        remainingJumps--; // Decrease remaining jumps
+        Debug.Log("Jumps Left: " + remainingJumps);
+
+        // Optional: Debug if jumps run out
+        if (remainingJumps <= 0)
+        {
+            Debug.LogWarning("No jumps remaining!");
+        }
+    }
+
+    // Keep the FinishBoxTrigger method
+    public bool FinishBoxTrigger()
+    {
+        // Add logic here if needed, or use it to communicate with other scripts
+        Debug.Log("FinishBoxTrigger method called in PlayerController.");
+        return true; // Example return value
     }
 }

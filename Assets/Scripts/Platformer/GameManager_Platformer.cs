@@ -40,7 +40,7 @@ public class GameManager_Platformer : MonoBehaviour
     {
         if (Time.timeScale == 0f || _gameWon) return;
 
-        if (_player.HasReachedGoal())
+        if (_player.FinishBoxTrigger())
         {
             UnlockChapter4Verse(); // Unlock Chapter 4 Verse through CompletedChapter
             endGame(false);
