@@ -1,0 +1,102 @@
+ [
+        {
+          "questionText": "For to us a child is born, to us a son is given... And he will be called Wonderful Counselor, Mighty God, Everlasting Father, ___ of Peace.",
+          "answers": ["King", "Prince", "Lord"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "She will give birth to a son, and you are to give him the name ___, because he will save his people from their sins.",
+          "answers": ["Jesus", "Joshua", "John"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "She gave birth to her firstborn, a son. She wrapped him in cloths and placed him in a ___...",
+          "answers": ["basket", "crib", "manger"],
+          "correctAnswerIndex": 2
+        },
+        {
+          "questionText": "Isn’t this the carpenter’s son? Isn’t his mother’s name Mary, and aren’t his brothers James, Joseph, Simon and ___?",
+          "answers": ["John", "Judas", "Peter"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "When morning came, he called his disciples to him and chose twelve of them, whom he also designated ___.",
+          "answers": ["disciples", "apostles", "followers"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "Jesus went throughout Galilee, teaching... proclaiming the good news... and healing every disease and sickness among the ___.",
+          "answers": ["crowds", "people", "believers"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "When Jesus... saw a large crowd, he had compassion on them and healed their ___.",
+          "answers": ["sickness", "fears", "troubles"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "When Jesus landed and saw a large crowd, he had compassion on them, because they were like sheep without a ___...",
+          "answers": ["leader", "shepherd", "teacher"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "As evening approached, the disciples came to him and said, 'This is a remote place, and it’s already getting late. Send the crowds away...’",
+          "answers": ["evening", "morning", "afternoon", "night"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "Jesus replied, 'They do not need to go away. You give them something to ___.'",
+          "answers": ["buy", "cook", "eat"],
+          "correctAnswerIndex": 2
+        },
+        {
+          "questionText": "'We have here only five loaves of bread and two ___,' they answered.",
+          "answers": ["fish", "loaves", "baskets"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "'Bring them here to me,' he said.",
+          "answers": [],
+          "correctAnswerIndex": -1
+        },
+        {
+          "questionText": "And he directed the people to sit down on the grass. Taking the five loaves and the two fish and looking up to heaven, he gave thanks and broke the ___...",
+          "answers": ["fish", "loaves", "bread"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "They all ate and were satisfied, and the disciples picked up twelve basketfuls of broken pieces that were left ___.",
+          "answers": ["over", "behind", "aside"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "The number of those who ate was about five thousand ___, besides women and children.",
+          "answers": ["men", "children", "followers"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "Taking the five loaves and the two fish and looking up to heaven, he gave thanks and broke the ___...",
+          "answers": ["bread", "loaves", "fish"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "Jesus then took the loaves, gave thanks, and distributed to those who were seated as much as they ___.",
+          "answers": ["wanted", "needed", "requested"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "When they had all had enough to eat, he said to his disciples, 'Gather the pieces that are left over. Let nothing be ___.'",
+          "answers": ["wasted", "eaten", "left"],
+          "correctAnswerIndex": 0
+        },
+        {
+          "questionText": "After the people saw the sign Jesus performed, they began to say, 'Surely this is the Prophet who is to come into the ___.'",
+          "answers": ["kingdom", "world", "earth"],
+          "correctAnswerIndex": 1
+        },
+        {
+          "questionText": "Jesus of Nazareth was a man accredited by God to you by miracles, wonders and ___, which God did among you through him...",
+          "answers": ["signs", "teachings", "miracles"],
+          "correctAnswerIndex": 0
+        }
+      ]
