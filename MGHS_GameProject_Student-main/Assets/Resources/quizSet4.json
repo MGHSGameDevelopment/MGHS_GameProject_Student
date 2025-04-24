@@ -1,0 +1,102 @@
+[
+  {
+    "questionText": "Who did Jesus give authority to drive out impure spirits and heal diseases?",
+    "answers": ["The Pharisees", "The twelve disciples", "The crowd"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "Who was the first apostle named in the list?",
+    "answers": ["John", "Andrew", "Simon (who is called Peter)"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "questionText": "Which apostle was identified as a tax collector?",
+    "answers": ["Thomas", "Matthew", "Bartholomew"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What were the disciples told *not* to do?",
+    "answers": ["Go among the Gentiles", "Preach to Israelites", "Heal the sick"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "questionText": "What message were they to proclaim?",
+    "answers": ["Repent or perish!", "The kingdom of heaven has come near.", "Peace be with you."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What were they told to do with those who had leprosy?",
+    "answers": ["Avoid them", "Cleanse them", "Pray for them from afar"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "How much money were they to take for the journey?",
+    "answers": ["Enough for three days", "None", "A small pouch"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What were the disciples told to leave behind?",
+    "answers": ["Water and bread", "Extra shirt or sandals or a staff", "A walking stick and blanket"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What should they do if a home is not deserving?",
+    "answers": ["Curse it", "Let their peace return to them", "Stay and argue"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What were they to do if a town rejected them?",
+    "answers": ["Call down fire from heaven", "Plead for acceptance", "Shake the dust off their feet"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "questionText": "Jesus said he was sending them out like:",
+    "answers": ["Soldiers among enemies", "Sheep among wolves", "Eagles among sparrows"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "How were they to behave?",
+    "answers": ["Bold and fearless", "Shrewd as snakes and innocent as doves", "Quiet and submissive"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "Who would the disciples be brought before?",
+    "answers": ["The high priests only", "The Roman army", "Governors and kings"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "questionText": "Who would give them the words to say when arrested?",
+    "answers": ["Jesus’ mother", "The Spirit of your Father", "The chief priest"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "Who will betray brother to death?",
+    "answers": ["No one", "Brother", "Neighbor"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "What should they do when persecuted in one place?",
+    "answers": ["Flee to another", "Remain and pray", "Hide in caves"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "questionText": "Who is not above the teacher?",
+    "answers": ["The student", "The ruler", "The disciple"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "questionText": "What are not sold for a penny?",
+    "answers": ["Lambs", "Two sparrows", "Loaves of bread"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "questionText": "How many hairs are numbered?",
+    "answers": ["Some", "A few", "All of them"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "questionText": "What will not cause someone to lose their reward?",
+    "answers": ["Praying loudly in public", "Giving a cup of cold water to a disciple", "Building a temple"],
+    "correctAnswerIndex": 1
+  }
+]
