@@ -10,7 +10,6 @@ public class RandomQuestionDisplay : MonoBehaviour
     public Question[] quizSet2;
     public Question[] quizSet3;
 
-    public Leaderboard leaderboardReference;
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI summaryScoreText;
@@ -43,6 +42,7 @@ public class RandomQuestionDisplay : MonoBehaviour
             1 => "quizSet1",
             2 => "quizSet2",
             3 => "quizSet3",
+            4 => "quizSet4",
             _ => null
         };
 
@@ -80,7 +80,6 @@ public class RandomQuestionDisplay : MonoBehaviour
                 summaryScoreText.text = "Final Score: " + score + "/" + totalQuestions;
                 finalScore = score;
                 Debug.Log("The Final Score is:" + finalScore);
-                Leaderboard.Instance.tallyScores(score);
             }
             if (summaryPanel != null)
                 summaryPanel.SetActive(true);

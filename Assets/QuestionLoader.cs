@@ -16,13 +16,13 @@ public class QuestionList
 
 public class QuestionLoader : MonoBehaviour
 {
-    public static Question[] LoadQuestions(string fileName)
+    public static Question[] LoadQuestions(string quizSet1)
     {
-        TextAsset file = Resources.Load<TextAsset>(fileName);
+        TextAsset file = Resources.Load<TextAsset>(quizSet1);
 
         if (file == null)
         {
-            Debug.LogError("File not found: " + fileName);
+            Debug.LogError("File not found: " + quizSet1);
             return new Question[0];
         }
 
