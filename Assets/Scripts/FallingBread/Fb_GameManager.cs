@@ -23,7 +23,7 @@ public class Fb_GameManager : MonoBehaviour
 
     public bool isReady; //if true make player move
 
-    private CompletedChapter3 _completedChapter; // Reference to the Chapter 3 script
+    public CompletedChapter3 _completedChapter; // Reference to the Chapter 3 script
 
     // Start is called before the first frame update
     void Start()

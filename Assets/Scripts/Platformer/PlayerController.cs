@@ -11,6 +11,18 @@ public class PlayerController : MonoBehaviour
     public int maxJumps = 15; // Maximum number of jumps allowed
     private int remainingJumps; // Tracks jumps left
 
+    private bool hasReachedGoal = false;
+
+    public void TriggerFinish()
+    {
+        hasReachedGoal = true;
+    }
+
+    public bool FinishBoxTrigger()
+    {
+        return hasReachedGoal;
+    }
+
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
@@ -61,11 +73,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Keep the FinishBoxTrigger method
-    public bool FinishBoxTrigger()
-    {
-        // Add logic here if needed, or use it to communicate with other scripts
-        Debug.Log("FinishBoxTrigger method called in PlayerController.");
-        return true; // Example return value
-    }
 }
