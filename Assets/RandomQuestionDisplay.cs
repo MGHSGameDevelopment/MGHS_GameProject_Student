@@ -19,7 +19,6 @@ public class RandomQuestionDisplay : MonoBehaviour
 
     private Question[] currentQuestions;
     private List<int> unusedIndices = new List<int>();
-    public Leaderboard leaderboardReference;
     private int currentQuestionIndex = -1;
     public int finalScore;
     private int score = 0;
@@ -81,8 +80,6 @@ public class RandomQuestionDisplay : MonoBehaviour
                 summaryScoreText.text = "Final Score: " + score + "/" + totalQuestions;
                 finalScore = score;
                 Debug.Log("The Final Score is:" + finalScore);
-                Leaderboard.Instance.tallyScores(score);
-                Leaderboard.Instance.GetLeaderboard();
             }
             if (summaryPanel != null)
                 summaryPanel.SetActive(true);

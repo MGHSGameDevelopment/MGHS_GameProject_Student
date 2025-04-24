@@ -14,7 +14,7 @@ public class Leaderboard : MonoBehaviour
     private List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey =
-        "a97abde768f061bb516287e382b9234a0e274ec3c285e50b187994b1c6981b13";
+        "cd8384d100c1f8957ec00fddccb2c50ab52f03caad7387d24a1745288f9f7e6b";
 
     public static Leaderboard Instance;
 

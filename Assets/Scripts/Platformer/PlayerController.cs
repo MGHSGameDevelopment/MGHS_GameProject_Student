@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed; private float Move;
+    public float Speed;
+    private float Move;
     public float jump; // Force applied to jump
     private Rigidbody2D player;
 
     public int maxJumps = 15; // Maximum number of jumps allowed
     private int remainingJumps; // Tracks jumps left
 
-    private bool hasReachedGoal = false;
-
-    public void TriggerFinish()
-    {
-        hasReachedGoal = true;
-    }
-
-    public bool FinishBoxTrigger()
-    {
-        return hasReachedGoal;
-    }
+    private bool isGrounded; // Tracks if player is grounded
 
     void Start()
     {
@@ -37,15 +28,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Check if player is on the ground by velocity
-        bool canJump = Mathf.Abs(player.velocity.y) < 1.0f;
+        // Check if player is grounded using a simple velocity check (can be replaced with a better check like Raycast or Collider)
+        isGrounded = Mathf.Abs(player.velocity.y) < 0.1f;
 
         // Handle horizontal movement
         Move = Input.GetAxis("Horizontal");
         player.velocity = new Vector2(Speed * Move, player.velocity.y);
 
-        // Handle jump input (allow jump only if not in the air)
-        if (Input.GetButtonDown("Jump") && canJump)
+        // Handle jump input (allow jump only if grounded and jumps remaining)
+        if (Input.GetButtonDown("Jump") && isGrounded && remainingJumps > 0)
         {
             Jump();
         }
@@ -73,4 +64,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Keep the FinishBoxTrigger method
+    public bool FinishBoxTrigger()
+    {
+        // Add logic here if needed, or use it to communicate with other scripts
+        Debug.Log("FinishBoxTrigger method called in PlayerController.");
+        return true; // Example return value
+    }
 }

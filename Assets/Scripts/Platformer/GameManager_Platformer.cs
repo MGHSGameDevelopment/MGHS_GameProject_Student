@@ -19,11 +19,11 @@ public class GameManager_Platformer : MonoBehaviour
     [SerializeField] private GameObject gameWonScreen;
     [SerializeField] private GameObject gameOverScreen;
 
-    private CompletedChapter _completedChapter; // Reference to CompletedChapter script
+    private CompletedChapter_Chapter4 _completedChapter; // Reference to CompletedChapter script
 
     void Awake()
     {
-        _completedChapter = FindObjectOfType<CompletedChapter>(); // Find CompletedChapter in the scene
+        _completedChapter = FindObjectOfType<CompletedChapter_Chapter4>(); // Find CompletedChapter in the scene
 
         if (_player == null) Debug.LogError("PlayerController reference is missing!");
         if (_completedChapter == null) Debug.LogError("CompletedChapter Script is Null!");
@@ -42,7 +42,7 @@ public class GameManager_Platformer : MonoBehaviour
 
         if (_player.FinishBoxTrigger())
         {
-            UnlockChapter4Verse(); // Unlock Chapter 4 Verse through CompletedChapter
+           _completedChapter.UnlockChapter4Verse(); // Unlock Chapter 4 Verse through CompletedChapter
             endGame(false);
         }
     }
