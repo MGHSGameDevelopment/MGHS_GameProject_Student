@@ -42,6 +42,7 @@ public class RandomQuestionDisplay : MonoBehaviour
             1 => "quizSet1",
             2 => "quizSet2",
             3 => "quizSet3",
+            4 => "quizSet4",
             _ => null
         };
 
